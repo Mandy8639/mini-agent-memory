@@ -1,0 +1,251 @@
+[
+  {
+    "id": "q01",
+    "type": "single",
+    "question": "How many PTO days do full-time employees receive under the current policy?",
+    "answer": "20 days per calendar year",
+    "docs": [
+      "hr-pto-policy.md"
+    ]
+  },
+  {
+    "id": "q02",
+    "type": "single",
+    "question": "What is the Atlas Pro price per seat on annual billing?",
+    "answer": "$49 per seat per month (annual)",
+    "docs": [
+      "pricing-atlas-plans.md"
+    ]
+  },
+  {
+    "id": "q03",
+    "type": "single",
+    "question": "Which cloud region is the default for Atlas data residency?",
+    "answer": "us-west-2 (Oregon)",
+    "docs": [
+      "product-data-residency.md"
+    ]
+  },
+  {
+    "id": "q04",
+    "type": "single",
+    "question": "What is Northstar Labs' company ARR as of 2025-02-28?",
+    "answer": "$4.2M",
+    "docs": [
+      "team-finance-arr.md"
+    ]
+  },
+  {
+    "id": "q05",
+    "type": "single",
+    "question": "How many weeks of paid parental leave do primary caregivers receive?",
+    "answer": "16 weeks",
+    "docs": [
+      "hr-parental-leave.md"
+    ]
+  },
+  {
+    "id": "q06",
+    "type": "single",
+    "question": "What is the Free plan API rate limit?",
+    "answer": "60 requests per minute",
+    "docs": [
+      "product-api-rate-limits.md"
+    ]
+  },
+  {
+    "id": "q07",
+    "type": "single",
+    "question": "When did Nova reach general availability (GA)?",
+    "answer": "2025-01-20",
+    "docs": [
+      "product-nova-overview.md",
+      "product-changelog-2025q1.md"
+    ]
+  },
+  {
+    "id": "q08",
+    "type": "single",
+    "question": "What is the employee referral bonus for engineering roles?",
+    "answer": "$3,000",
+    "docs": [
+      "hr-referral-bonus.md"
+    ]
+  },
+  {
+    "id": "q09",
+    "type": "single",
+    "question": "What is the status page URL?",
+    "answer": "https://status.northstarlabs.example",
+    "docs": [
+      "policy-status-page.md"
+    ]
+  },
+  {
+    "id": "q10",
+    "type": "single",
+    "question": "How long after contract end is customer data retained before deletion?",
+    "answer": "30 days",
+    "docs": [
+      "policy-data-retention.md"
+    ]
+  },
+  {
+    "id": "q11",
+    "type": "cross",
+    "question": "What is Acme Robotics' annual Atlas fee, and when do they renew?",
+    "answer": "$12,936 per year; renews 2025-06-15 (contract effective 2024-06-15, 12-month term; CS notes renewal date 2025-06-15)",
+    "docs": [
+      "contract-acme-robotics.md",
+      "team-cs-renewal-notes.md"
+    ]
+  },
+  {
+    "id": "q12",
+    "type": "cross",
+    "question": "Helix Health buys Atlas Pro + Nova Pro for 40 seats annually. What is their total annual fee?",
+    "answer": "$30,720 per year",
+    "docs": [
+      "contract-helix-health.md",
+      "pricing-atlas-plans.md",
+      "pricing-nova-addon.md"
+    ]
+  },
+  {
+    "id": "q13",
+    "type": "cross",
+    "question": "Brightfold Media's residency region and whether dedicated CSM is included?",
+    "answer": "eu-central-1; Dedicated CSM is included",
+    "docs": [
+      "contract-brightfold.md",
+      "product-data-residency.md",
+      "pricing-professional-services.md"
+    ]
+  },
+  {
+    "id": "q14",
+    "type": "cross",
+    "question": "Can a Pro customer enable SAML SSO? If not, what plan is required?",
+    "answer": "No \u2014 SSO is Enterprise only",
+    "docs": [
+      "product-sso.md",
+      "team-support-macros.md"
+    ]
+  },
+  {
+    "id": "q15",
+    "type": "cross",
+    "question": "Orbit Retail's annual fee and the multi-year discount percentage applied?",
+    "answer": "$72,000 per year with a 15% multi-year discount",
+    "docs": [
+      "contract-orbit-retail.md",
+      "pricing-discounts.md"
+    ]
+  },
+  {
+    "id": "q16",
+    "type": "cross",
+    "question": "A startup under $2M ARR wants Pro and also nonprofit pricing. Can they stack both discounts?",
+    "answer": "No \u2014 startup and nonprofit discounts cannot be stacked",
+    "docs": [
+      "pricing-discounts.md"
+    ]
+  },
+  {
+    "id": "q17",
+    "type": "cross",
+    "question": "After the 2024-11-08 outage, what deploy rule was added for the alert evaluator?",
+    "answer": "Canary deploys required for the evaluator (and status page auto-update hooked to PagerDuty); deploy runbook requires a second approver for alert-evaluator deploys",
+    "docs": [
+      "team-security-incident-2024.md",
+      "runbook-deploy.md"
+    ]
+  },
+  {
+    "id": "q18",
+    "type": "cross",
+    "question": "How many engineering employees does Northstar have, and how many engineering reqs are open?",
+    "answer": "34 engineering employees; 3 open engineering reqs",
+    "docs": [
+      "team-hr-headcount.md"
+    ]
+  },
+  {
+    "id": "q19",
+    "type": "cross",
+    "question": "What is the included email send allotment on Nova Pro before overage, and the overage rate?",
+    "answer": "100,000 emails/month included; $0.002 per email after that",
+    "docs": [
+      "pricing-nova-addon.md",
+      "team-marketing-launch.md"
+    ]
+  },
+  {
+    "id": "q20",
+    "type": "cross",
+    "question": "Compare alert evaluation cadence on Free vs Pro plans.",
+    "answer": "Free: every 15 minutes; Pro: every 5 minutes",
+    "docs": [
+      "product-atlas-alerts.md",
+      "pricing-atlas-plans.md"
+    ]
+  },
+  {
+    "id": "q21",
+    "type": "trap",
+    "question": "How many PTO days do full-time employees get? (Be careful about superseded policies.)",
+    "answer": "20 days (current policy effective 2025-01-01). The legacy 15-day policy is superseded.",
+    "docs": [
+      "hr-pto-policy.md",
+      "hr-pto-policy-legacy.md"
+    ],
+    "trap": "Answering 15 days from the superseded legacy policy"
+  },
+  {
+    "id": "q22",
+    "type": "trap",
+    "question": "What should we quote a new prospect for Atlas Pro annual seat price?",
+    "answer": "$49/seat/month annual. Do not quote the legacy $39 price.",
+    "docs": [
+      "pricing-atlas-plans.md",
+      "pricing-legacy-pro.md",
+      "team-support-macros.md"
+    ],
+    "trap": "Quoting legacy $39/seat/month"
+  },
+  {
+    "id": "q23",
+    "type": "trap",
+    "question": "What is the default expiry for Atlas public dashboard share links?",
+    "answer": "7 days (changed 2025-03-11 from 30 days)",
+    "docs": [
+      "product-atlas-dashboards.md",
+      "product-changelog-2025q1.md",
+      "team-product-trap-note.md"
+    ],
+    "trap": "Answering 30 days (old default)"
+  },
+  {
+    "id": "q24",
+    "type": "trap",
+    "question": "Does Northstar currently offer a HIPAA BAA for Helix Health or other customers?",
+    "answer": "No. HIPAA BAA is not offered yet (target Q3 2025). Helix's contract explicitly excludes it.",
+    "docs": [
+      "faq-security.md",
+      "contract-helix-health.md",
+      "team-sales-battlecard.md"
+    ],
+    "trap": "Saying yes / claiming HIPAA is available because roadmap mentions it"
+  },
+  {
+    "id": "q25",
+    "type": "trap",
+    "question": "Do unused Atlas pilot days convert into paid credits when a customer buys?",
+    "answer": "No. Unused pilot days do not convert to paid credits.",
+    "docs": [
+      "pricing-pilot.md",
+      "contract-helix-health.md"
+    ],
+    "trap": "Assuming unused pilot time becomes credit"
+  }
+]
