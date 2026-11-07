@@ -2,6 +2,7 @@
   {
     "id": "q01",
     "type": "single",
+    "round": 1,
     "question": "How many PTO days do full-time employees receive under the current policy?",
     "answer": "20 days per calendar year",
     "docs": [
@@ -11,6 +12,7 @@
   {
     "id": "q02",
     "type": "single",
+    "round": 1,
     "question": "What is the Atlas Pro price per seat on annual billing?",
     "answer": "$49 per seat per month (annual)",
     "docs": [
@@ -20,6 +22,7 @@
   {
     "id": "q03",
     "type": "single",
+    "round": 1,
     "question": "Which cloud region is the default for Atlas data residency?",
     "answer": "us-west-2 (Oregon)",
     "docs": [
@@ -29,6 +32,7 @@
   {
     "id": "q04",
     "type": "single",
+    "round": 1,
     "question": "What is Northstar Labs' company ARR as of 2025-02-28?",
     "answer": "$4.2M",
     "docs": [
@@ -38,6 +42,7 @@
   {
     "id": "q05",
     "type": "single",
+    "round": 1,
     "question": "How many weeks of paid parental leave do primary caregivers receive?",
     "answer": "16 weeks",
     "docs": [
@@ -47,6 +52,7 @@
   {
     "id": "q06",
     "type": "single",
+    "round": 1,
     "question": "What is the Free plan API rate limit?",
     "answer": "60 requests per minute",
     "docs": [
@@ -56,6 +62,7 @@
   {
     "id": "q07",
     "type": "single",
+    "round": 1,
     "question": "When did Nova reach general availability (GA)?",
     "answer": "2025-01-20",
     "docs": [
@@ -66,6 +73,7 @@
   {
     "id": "q08",
     "type": "single",
+    "round": 1,
     "question": "What is the employee referral bonus for engineering roles?",
     "answer": "$3,000",
     "docs": [
@@ -75,6 +83,7 @@
   {
     "id": "q09",
     "type": "single",
+    "round": 1,
     "question": "What is the status page URL?",
     "answer": "https://status.northstarlabs.example",
     "docs": [
@@ -84,6 +93,7 @@
   {
     "id": "q10",
     "type": "single",
+    "round": 1,
     "question": "How long after contract end is customer data retained before deletion?",
     "answer": "30 days",
     "docs": [
@@ -93,6 +103,7 @@
   {
     "id": "q11",
     "type": "cross",
+    "round": 1,
     "question": "What is Acme Robotics' annual Atlas fee, and when do they renew?",
     "answer": "$12,936 per year; renews 2025-06-15 (contract effective 2024-06-15, 12-month term; CS notes renewal date 2025-06-15)",
     "docs": [
@@ -103,6 +114,7 @@
   {
     "id": "q12",
     "type": "cross",
+    "round": 1,
     "question": "Helix Health buys Atlas Pro + Nova Pro for 40 seats annually. What is their total annual fee?",
     "answer": "$30,720 per year",
     "docs": [
@@ -114,6 +126,7 @@
   {
     "id": "q13",
     "type": "cross",
+    "round": 1,
     "question": "Brightfold Media's residency region and whether dedicated CSM is included?",
     "answer": "eu-central-1; Dedicated CSM is included",
     "docs": [
@@ -125,8 +138,9 @@
   {
     "id": "q14",
     "type": "cross",
+    "round": 1,
     "question": "Can a Pro customer enable SAML SSO? If not, what plan is required?",
-    "answer": "No \u2014 SSO is Enterprise only",
+    "answer": "No — SSO is Enterprise only",
     "docs": [
       "product-sso.md",
       "team-support-macros.md"
@@ -135,6 +149,7 @@
   {
     "id": "q15",
     "type": "cross",
+    "round": 1,
     "question": "Orbit Retail's annual fee and the multi-year discount percentage applied?",
     "answer": "$72,000 per year with a 15% multi-year discount",
     "docs": [
@@ -145,8 +160,9 @@
   {
     "id": "q16",
     "type": "cross",
+    "round": 1,
     "question": "A startup under $2M ARR wants Pro and also nonprofit pricing. Can they stack both discounts?",
-    "answer": "No \u2014 startup and nonprofit discounts cannot be stacked",
+    "answer": "No — startup and nonprofit discounts cannot be stacked",
     "docs": [
       "pricing-discounts.md"
     ]
@@ -154,6 +170,7 @@
   {
     "id": "q17",
     "type": "cross",
+    "round": 1,
     "question": "After the 2024-11-08 outage, what deploy rule was added for the alert evaluator?",
     "answer": "Canary deploys required for the evaluator (and status page auto-update hooked to PagerDuty); deploy runbook requires a second approver for alert-evaluator deploys",
     "docs": [
@@ -164,6 +181,7 @@
   {
     "id": "q18",
     "type": "cross",
+    "round": 1,
     "question": "How many engineering employees does Northstar have, and how many engineering reqs are open?",
     "answer": "34 engineering employees; 3 open engineering reqs",
     "docs": [
@@ -173,6 +191,7 @@
   {
     "id": "q19",
     "type": "cross",
+    "round": 1,
     "question": "What is the included email send allotment on Nova Pro before overage, and the overage rate?",
     "answer": "100,000 emails/month included; $0.002 per email after that",
     "docs": [
@@ -183,6 +202,7 @@
   {
     "id": "q20",
     "type": "cross",
+    "round": 1,
     "question": "Compare alert evaluation cadence on Free vs Pro plans.",
     "answer": "Free: every 15 minutes; Pro: every 5 minutes",
     "docs": [
@@ -193,17 +213,21 @@
   {
     "id": "q21",
     "type": "trap",
+    "round": 1,
     "question": "How many PTO days do full-time employees get? (Be careful about superseded policies.)",
     "answer": "20 days (current policy effective 2025-01-01). The legacy 15-day policy is superseded.",
     "docs": [
       "hr-pto-policy.md",
       "hr-pto-policy-legacy.md"
     ],
-    "trap": "Answering 15 days from the superseded legacy policy"
+    "trap": "Answering 15 days from the superseded legacy policy",
+    "current_fact": "20 days",
+    "legacy_trap": "15 days"
   },
   {
     "id": "q22",
     "type": "trap",
+    "round": 1,
     "question": "What should we quote a new prospect for Atlas Pro annual seat price?",
     "answer": "$49/seat/month annual. Do not quote the legacy $39 price.",
     "docs": [
@@ -211,11 +235,14 @@
       "pricing-legacy-pro.md",
       "team-support-macros.md"
     ],
-    "trap": "Quoting legacy $39/seat/month"
+    "trap": "Quoting legacy $39/seat/month",
+    "current_fact": "$49/seat/month annual",
+    "legacy_trap": "$39"
   },
   {
     "id": "q23",
     "type": "trap",
+    "round": 1,
     "question": "What is the default expiry for Atlas public dashboard share links?",
     "answer": "7 days (changed 2025-03-11 from 30 days)",
     "docs": [
@@ -223,11 +250,14 @@
       "product-changelog-2025q1.md",
       "team-product-trap-note.md"
     ],
-    "trap": "Answering 30 days (old default)"
+    "trap": "Answering 30 days (old default)",
+    "current_fact": "7 days",
+    "legacy_trap": "30 days"
   },
   {
     "id": "q24",
     "type": "trap",
+    "round": 1,
     "question": "Does Northstar currently offer a HIPAA BAA for Helix Health or other customers?",
     "answer": "No. HIPAA BAA is not offered yet (target Q3 2025). Helix's contract explicitly excludes it.",
     "docs": [
@@ -235,17 +265,100 @@
       "contract-helix-health.md",
       "team-sales-battlecard.md"
     ],
-    "trap": "Saying yes / claiming HIPAA is available because roadmap mentions it"
+    "trap": "Saying yes / claiming HIPAA is available because roadmap mentions it",
+    "current_fact": "No — HIPAA BAA not offered",
+    "legacy_trap": "claiming HIPAA is available"
   },
   {
     "id": "q25",
     "type": "trap",
+    "round": 1,
     "question": "Do unused Atlas pilot days convert into paid credits when a customer buys?",
     "answer": "No. Unused pilot days do not convert to paid credits.",
     "docs": [
       "pricing-pilot.md",
       "contract-helix-health.md"
     ],
-    "trap": "Assuming unused pilot time becomes credit"
+    "trap": "Assuming unused pilot time becomes credit",
+    "current_fact": "No — unused pilot days do not convert",
+    "legacy_trap": "claiming unused pilot days become credits"
+  },
+  {
+    "id": "q21r2",
+    "type": "trap",
+    "round": 2,
+    "round2_of": "q21",
+    "question": "Under the latest vacation policy, how many PTO days does a full-time employee get each calendar year?",
+    "answer": "20 days (current policy effective 2025-01-01). The legacy 15-day policy is superseded.",
+    "docs": [
+      "hr-pto-policy.md",
+      "hr-pto-policy-legacy.md"
+    ],
+    "trap": "Answering 15 days from the superseded legacy policy",
+    "current_fact": "20 days",
+    "legacy_trap": "15 days"
+  },
+  {
+    "id": "q22r2",
+    "type": "trap",
+    "round": 2,
+    "round2_of": "q22",
+    "question": "A sales rep is pricing Atlas Pro for a brand-new customer on annual billing. What seat price should they use?",
+    "answer": "$49/seat/month annual. Do not quote the legacy $39 price.",
+    "docs": [
+      "pricing-atlas-plans.md",
+      "pricing-legacy-pro.md",
+      "team-support-macros.md"
+    ],
+    "trap": "Quoting legacy $39/seat/month",
+    "current_fact": "$49/seat/month annual",
+    "legacy_trap": "$39"
+  },
+  {
+    "id": "q23r2",
+    "type": "trap",
+    "round": 2,
+    "round2_of": "q23",
+    "question": "If someone creates a public share link for an Atlas dashboard today, how long until that link expires by default?",
+    "answer": "7 days (changed 2025-03-11 from 30 days)",
+    "docs": [
+      "product-atlas-dashboards.md",
+      "product-changelog-2025q1.md",
+      "team-product-trap-note.md"
+    ],
+    "trap": "Answering 30 days (old default)",
+    "current_fact": "7 days",
+    "legacy_trap": "30 days"
+  },
+  {
+    "id": "q24r2",
+    "type": "trap",
+    "round": 2,
+    "round2_of": "q24",
+    "question": "Can we sign a HIPAA Business Associate Agreement for a health-care prospect right now?",
+    "answer": "No. HIPAA BAA is not offered yet (target Q3 2025). Helix's contract explicitly excludes it.",
+    "docs": [
+      "faq-security.md",
+      "contract-helix-health.md",
+      "team-sales-battlecard.md"
+    ],
+    "trap": "Saying yes / claiming HIPAA is available because roadmap mentions it",
+    "current_fact": "No — HIPAA BAA not offered",
+    "legacy_trap": "claiming HIPAA is available"
+  },
+  {
+    "id": "q25r2",
+    "type": "trap",
+    "round": 2,
+    "round2_of": "q25",
+    "question": "If a trial customer has unused Atlas pilot days left when they purchase, do those days turn into account credit?",
+    "answer": "No. Unused pilot days do not convert to paid credits.",
+    "docs": [
+      "pricing-pilot.md",
+      "contract-helix-health.md"
+    ],
+    "trap": "Assuming unused pilot time becomes credit",
+    "current_fact": "No — unused pilot days do not convert",
+    "legacy_trap": "claiming unused pilot days become credits"
   }
 ]

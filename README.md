@@ -19,7 +19,7 @@ No fine-tuning. No vector DB. Memory is files only.
 3. **Wiki** — linked pages built by dreaming (`memory/wiki/`), including one page per contract with terms quoted verbatim.
 4. **Injected context** — `memory/MEMORY.md`, capped in code at **200 lines / 25 KB**, loaded at the start of every session.
 5. **Dreaming** — offline pass that corrects notes against transcripts, builds/merges wiki pages, promotes a small index, focuses on traps/contracts, and fixes broken links.
-6. **Eval** — same 25 questions under four conditions; reports accuracy, repeat trap mistakes, and avg input tokens.
+6. **Eval** — same 25 questions under four conditions, then **Round 2** paraphrases of the 5 trap questions; reports accuracy, repeat trap mistakes, loop-closed recoveries, and avg input tokens.
 
 ## Setup
 
@@ -47,7 +47,7 @@ python agent.py ask -q "What is Atlas Pro annual seat price?"
 python dream.py
 # or: python agent.py dream
 
-# Eval (full 25 × conditions — uses the API)
+# Eval (full 25 × conditions + Round 2 traps — uses the API)
 python eval.py
 # cheaper: python eval.py --limit 15
 ```
@@ -64,7 +64,7 @@ mini-agent-memory/
 ├── dream.py
 ├── eval.py
 ├── corpus/           # 61 short markdown docs
-├── questions.json    # 25 questions (10 single / 10 cross / 5 trap)
+├── questions.json    # 25 Round-1 questions + 5 Round-2 trap paraphrases
 └── memory/
     ├── transcripts/  # append-only session logs
     ├── notes/
@@ -74,32 +74,40 @@ mini-agent-memory/
 
 ## Eval results
 
-**Full run (25 questions × conditions), 2026-11-07.** Model:
+**Full run (25 questions × conditions + Round 2 traps), 2026-11-07.** Model:
 `claude-sonnet-4-5-20250929`. No `--limit`. Results in `eval_results.json`
 (gitignored).
 
-| Condition | Accuracy | Repeat mistakes | Avg tokens / question |
-|---|---|---|---|
-| No memory (baseline) | 21/25 (84%) | 0 | 4267 |
-| Memory on (notes only, no dreaming) | 23/25 (92%) | 0 | 5270 |
-| Memory + one dreaming pass | 23/25 (92%) | 0 | 5402 |
-| Search alone (cross-doc subset) | 9/10 (90%) | 0 | 4591 |
-| Search + wiki (cross-doc subset) | 8/10 (80%) | 0 | 7257 |
+Grader Phase 2 fix: normalize case/punctuation/whitespace, per-question
+aliases, and two-part trap scoring (accuracy = current fact only; trap
+awareness reported separately). Round 2 asks the 5 traps again in paraphrase
+so “repeat mistakes” / “loop closed” are real learning-loop metrics.
+
+Previously reported 21/25 (84%) / 23/25 (92%) / 23/25 (92%) / 9/10 (90%) /
+8/10 (80%), corrected after the grader fix (and re-run) to the table below.
+
+| Condition | Accuracy | Repeat mistakes | Loop closed | Avg tokens / question |
+|---|---|---|---|---|
+| No memory (baseline) | 24/25 (96%) | 0 | 0 | 4514 |
+| Memory on (notes only, no dreaming) | 24/25 (96%) | 0 | 0 | 5254 |
+| Memory + one dreaming pass | 25/25 (100%) | 0 | 0 | 6236 |
+| Search alone (cross-doc subset) | 9/10 (90%) | — | — | 4829 |
+| Search + wiki (cross-doc subset) | 9/10 (90%) | — | — | 7068 |
 
 Memory sizes at end of each condition:
 
 | Condition | Notes | Wiki pages | MEMORY.md lines / bytes |
 |---|---|---|---|
 | baseline | 0 | 0 | 3 / 40 |
-| memory_notes | 10 | 0 | 3 / 40 |
-| memory_dream | 8 | 9 | 64 / 1996 |
-| search_wiki (final) | 0 | 11 | 67 / 2196 |
+| memory_notes | 6 | 0 | 3 / 40 |
+| memory_dream | 10 | 10 | 105 / 3951 |
+| search_wiki (final) | 0 | 12 | 48 / 2167 |
 
 Re-run:
 
 ```bash
 export ANTHROPIC_API_KEY=...   # or: set -a; source .env; set +a
-python eval.py                 # full 25
+python eval.py                 # full 25 + Round 2
 # cheaper: python eval.py --limit 15
 ```
 
@@ -110,16 +118,17 @@ with selective memory (Fable 5: 9 files + `global.md`). This repo steers the
 agent to save verified facts, tested rules, and traps — not re-lookupable doc
 state — and dreaming keeps `MEMORY.md` small via the hard cap.
 
-Live eval stayed well under the cap: after dreaming, `MEMORY.md` was ~64–67
-lines / ~2 KB with 8–11 wiki pages (4 contracts + focus/index + trap pages).
+Live eval stayed under the cap: after dreaming, `MEMORY.md` was ~48–105
+lines / ~2–4 KB with 10–12 wiki pages (4 contracts + focus/index + trap pages).
 
 ## Design choices (when ambiguous → simplest)
 
 - Keyword search only (no embeddings / vector DB).
-- Heuristic grader in `eval.py` (number/phrase overlap + trap detectors), not an LLM judge — cheaper and deterministic.
+- Heuristic grader in `eval.py` (normalization + aliases + two-part trap checks), not an LLM judge — cheaper and deterministic.
 - Dreaming uses the API when a key is present; `--offline` still builds contract wiki pages, focus, gap-fill, and a deterministic `MEMORY.md`.
 - Contract wiki pages are seeded verbatim from `corpus/contract-*.md` (lesson from the post’s overwritten shared-table failure).
 - Transcripts are committed as empty dirs in spirit; session logs appear after `ask`/`eval` and are fine to keep locally (not secrets). `.env` is gitignored.
+- Round 2 trap paraphrases live in `questions.json` (`round: 2`, `round2_of`) and run without resetting memory so notes/dreaming can close the loop.
 
 ## Open questions (from the post — not solved here)
 
@@ -135,23 +144,24 @@ Both limits are constants in `agent.py` (`MAX_MEMORY_LINES`, `MAX_MEMORY_BYTES`)
 
 ## What broke first
 
-From the live full eval (plus earlier offline lessons):
+From the Phase 2 re-run (grader fixed + Round 2 traps):
 
-1. **Heuristic grader false negatives** — several “fails” were correct answers
-   docked by token rules: q14 answers said “Enterprise plan only” but the
-   grader required the exact phrase `enterprise only`; q22/q23 expected
-   strings include legacy numbers (`$39`, `30 days`), so omitting the trap
-   value drops hit-rate below 0.6 even when the current fact is right.
-2. **q17 multi-doc miss (real)** — across conditions the agent cited the
-   “second approver” deploy-runbook rule but rarely the canary / status-page
-   pieces from the incident note. Cross-doc synthesis, not memory, was the
-   weak spot.
-3. **Search + wiki hurt more than it helped on this set** — cross-doc accuracy
-   fell 90% → 80% vs search alone, while avg tokens jumped 4591 → 7257
-   (wiki context bloat without fixing q14/q17).
-4. **Repeat trap mistakes stayed at 0** — notes/dreaming did not re-poison
-   sessions on this run; memory_notes and memory_dream both lifted overall
-   accuracy 84% → 92% vs baseline.
-5. **Cap enforcement still matters** — early drafts only documented the
-   200-line / 25 KB limit; live dreaming stayed ~2 KB because
+1. **q17 multi-doc miss (still real without dreaming)** — baseline, notes-only,
+   search-alone, and search+wiki all cited the “second approver” deploy-runbook
+   rule but missed canary / status-page pieces from the incident note. **Memory
+   + one dreaming pass was the only condition to get q17 right** (25/25).
+2. **Search + wiki no longer loses accuracy on this set** — both cross-doc
+   conditions scored 9/10 (90%), but wiki still bloated tokens 4829 → 7068
+   (~46%) without fixing q17. Previously reported search+wiki 8/10 (80%) was
+   mostly the q14 grader false negative.
+3. **Round 2 traps: no repeat mistakes, but also nothing to “close”** — all 5
+   traps were already correct in Round 1 under every condition, so
+   repeat-mistakes = 0 and loop-closed = 0. The metric is now real (R1 wrong ∧
+   R2 wrong the same way); on this run the agent simply did not fall for the
+   traps the first time.
+4. **Grader false negatives (fixed)** — Phase 1 marked q14/q22/q23 wrong when
+   answers were right (“Enterprise plan only” vs required `enterprise only`;
+   legacy `$39` / `30 days` required in expected strings). Those inflate the
+   old 84%/92%/80% figures; corrected numbers are in the table above.
+5. **Cap enforcement still matters** — live dreaming stayed ~2–4 KB because
    `enforce_memory_md_cap` rewrites after promote.

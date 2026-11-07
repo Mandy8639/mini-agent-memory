@@ -1,67 +1,48 @@
-# MEMORY
+# MEMORY.md — Company Assistant Index
 
-**Purpose**: Compact injected-context index for company assistant. Details live in linked files.
-
----
-
-## CRITICAL TRAPS (Verify Before Answering)
-
-1. **PTO**: 20 days current policy (legacy 15 days **superseded**)
-2. **Pro Annual Pricing**: $49/seat current (legacy $39/seat **superseded**)
-3. **Share Link Expiry**: Default is **7 days** (not 30)
-4. **HIPAA BAA**: **Not available yet** → See [hipaa-baa-status.md](wiki/hipaa-baa-status.md)
-5. **Pilot Days**: Do **NOT** convert to credits → See [pilot-credits.md](wiki/pilot-credits.md)
+**Purpose:** Quick-reference index for company assistant. Details live in linked files.
 
 ---
 
-## QUICK REFERENCE
+## 🚨 CRITICAL TRAPS (Verify Before Answering)
 
-### Pricing
-- **Current**: See [pricing-current-vs-legacy.md](wiki/pricing-current-vs-legacy.md)
-  - Pro Annual: $49/seat
-  - Legacy pricing superseded
-
-### PTO Policy
-- **Current**: See [pto-current-vs-legacy.md](wiki/pto-current-vs-legacy.md)
-  - 20 days annual allowance
-  - Legacy 15-day policy superseded
-
-### Product Features
-- **Share Links**: [share-link-expiry.md](wiki/share-link-expiry.md) — Default 7-day expiry
-- **Pilot Credits**: [pilot-credits.md](wiki/pilot-credits.md) — Days ≠ credits
-- **HIPAA BAA**: [hipaa-baa-status.md](wiki/hipaa-baa-status.md) — Not yet available
-
-### Company Focus
-- **Strategy**: [focus.md](wiki/focus.md)
+1. **PTO is 20 days** (legacy 15 superseded) → [pto-current-vs-legacy.md](wiki/pto-current-vs-legacy.md)
+2. **Pro annual is $49/seat** (legacy $39 superseded) → [pricing-current-vs-legacy.md](wiki/pricing-current-vs-legacy.md)
+3. **Share link default expiry is 7 days** (not 30) → [share-link-expiry.md](wiki/share-link-expiry.md)
+4. **No HIPAA BAA yet** → [hipaa-baa-status.md](wiki/hipaa-baa-status.md)
+5. **Pilot days do not convert to credits** → [pilot-credits.md](wiki/pilot-credits.md)
 
 ---
 
-## CUSTOMER CONTRACTS
+## 📋 Core Knowledge
 
-| Customer | File |
-|----------|------|
-| ACME Robotics | [contract-acme-robotics.md](wiki/contract-acme-robotics.md) |
-| Brightfold | [contract-brightfold.md](wiki/contract-brightfold.md) |
-| Helix Health | [contract-helix-health.md](wiki/contract-helix-health.md) |
-| Orbit Retail | [contract-orbit-retail.md](wiki/contract-orbit-retail.md) |
+### Contracts
+- **Overview:** [contracts-overview.md](wiki/contracts-overview.md)
+- **ACME Robotics:** [contract-acme-robotics.md](wiki/contract-acme-robotics.md)
+- **Brightfold:** [contract-brightfold.md](wiki/contract-brightfold.md)
+- **Helix Health:** [contract-helix-health.md](wiki/contract-helix-health.md)
+- **Orbit Retail:** [contract-orbit-retail.md](wiki/contract-orbit-retail.md)
 
----
+### Policies & Features
+- **PTO:** Current vs. legacy → [pto-current-vs-legacy.md](wiki/pto-current-vs-legacy.md)
+- **Pricing:** Current vs. legacy → [pricing-current-vs-legacy.md](wiki/pricing-current-vs-legacy.md)
+- **Share Links:** Expiry rules → [share-link-expiry.md](wiki/share-link-expiry.md)
+- **HIPAA BAA:** Status → [hipaa-baa-status.md](wiki/hipaa-baa-status.md)
+- **Pilot Credits:** Conversion rules → [pilot-credits.md](wiki/pilot-credits.md)
+- **Focus:** Company priorities → [focus.md](wiki/focus.md)
 
-## NAVIGATION
-
-- **Wiki Index**: [index.md](wiki/index.md)
-- **All Wiki Files**: `wiki/` directory
-- **Notes**: `notes/` directory (currently empty)
-
----
-
-## USAGE INSTRUCTIONS
-
-1. **Always check CRITICAL TRAPS** before answering policy/pricing questions
-2. **Link to wiki files** for detailed information — don't duplicate content
-3. **Never invent facts** — if info isn't in MEMORY or linked files, say so
-4. **Current > Legacy** — Always use current policies unless explicitly asked about legacy
+### Navigation
+- **Start here:** [index.md](wiki/index.md)
 
 ---
 
-**Last Context**: 11 wiki files indexed, 0 notes, 5 verified traps
+## ⚙️ Usage Rules
+
+1. **Always check traps first** before answering PTO, pricing, share links, HIPAA, or pilot questions
+2. **Link to wiki files** for details — don't duplicate content here
+3. **Never invent facts** — if uncertain, say so and suggest relevant wiki files
+4. **Keep this file under 200 lines** — move details to wiki/
+
+---
+
+*Last verified: This index reflects current wiki/ contents. Always check linked files for authoritative details.*

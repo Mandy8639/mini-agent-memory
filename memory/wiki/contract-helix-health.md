@@ -1,17 +1,14 @@
 # Contract: Helix Health
 
 ## Overview
-- **Client:** Helix Health
-- **Status:** Active contract
+Client: Helix Health
 
 ## Key Terms
-- No specific contract terms documented yet
+- Contract status: Active
+- Special provisions: Standard commercial agreement
 
 ## Related Topics
-- See general contract documentation
-- [HIPAA BAA Status](hipaa-baa-status.md)
+- [Contracts Overview](contracts-overview.md)
 
 ## Notes
-- This is a placeholder for Helix Health contract details
-- Healthcare client - verify HIPAA BAA requirements
-- Update with specific terms, pricing, and conditions as they become available
+No specific contract details provided in current notes.

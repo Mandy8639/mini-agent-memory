@@ -1,23 +1,21 @@
-# Known Trap: Pricing Current vs Legacy
+# Pricing: Current vs Legacy
 
 ## Overview
-This page documents the differences between current and legacy pricing structures to prevent confusion when answering customer questions.
+This page tracks differences between current and legacy pricing structures that support agents should be aware of.
 
 ## Current Pricing
-- Details to be documented from contract terms
+Details to be added when contract terms are available.
 
 ## Legacy Pricing
-- Details to be documented from historical contract terms
+Details to be added when contract terms are available.
 
 ## Common Issues
-- Customers may expect old pricing terms
-- Grandfathered accounts may have different rates
-- Always verify which pricing version applies to their contract
-
-## How to Identify
-- Check contract effective date
-- Review contract terms for pricing section
-- Verify any grandfather clauses
+- Price discrepancies between old and new accounts
+- Grandfathered pricing terms
+- Upgrade/downgrade implications
 
 ## Related Topics
-- See individual contract pages for specific pricing terms
+- [Contracts Overview](contracts-overview.md)
+
+## Notes
+No specific pricing details provided in current notes.

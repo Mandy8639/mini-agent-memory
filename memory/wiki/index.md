@@ -6,6 +6,7 @@ Built by dreaming. Transcripts remain ground truth.
 - [contract-brightfold](contract-brightfold.md)
 - [contract-helix-health](contract-helix-health.md)
 - [contract-orbit-retail](contract-orbit-retail.md)
+- [contracts-overview](contracts-overview.md)
 - [focus](focus.md)
 - [hipaa-baa-status](hipaa-baa-status.md)
 - [pilot-credits](pilot-credits.md)

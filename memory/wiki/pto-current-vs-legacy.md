@@ -1,21 +1,20 @@
-# Known Trap: PTO Current vs Legacy
+# PTO: Current vs Legacy Policies
 
 ## Overview
-This page documents the differences between current and legacy PTO (Paid Time Off) policies to prevent confusion when answering customer questions.
+This page tracks differences between current and legacy PTO (Paid Time Off) policies that may affect support interactions.
 
 ## Current Policy
-- Details to be documented from contract terms
+Details to be added when contract terms are available.
 
 ## Legacy Policy
-- Details to be documented from historical contract terms
+Details to be added when contract terms are available.
 
 ## Common Issues
-- Customers may reference old policy terms
-- Always verify which policy version applies to their contract
-
-## How to Identify
-- Check contract effective date
-- Review contract terms for PTO section references
+- Policy confusion between old and new customers
+- Grandfathered accounts with different terms
 
 ## Related Topics
-- See individual contract pages for specific PTO terms
+- [Contracts Overview](contracts-overview.md)
+
+## Notes
+No specific PTO policy details provided in current notes.

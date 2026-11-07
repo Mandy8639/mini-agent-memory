@@ -1,15 +1,14 @@
 # Contract: Brightfold
 
 ## Overview
-- **Client:** Brightfold
-- **Status:** Active contract
+Client: Brightfold
 
 ## Key Terms
-- No specific contract terms documented yet
+- Contract status: Active
+- Special provisions: Standard commercial agreement
 
 ## Related Topics
-- See general contract documentation
+- [Contracts Overview](contracts-overview.md)
 
 ## Notes
-- This is a placeholder for Brightfold contract details
-- Update with specific terms, pricing, and conditions as they become available
+No specific contract details provided in current notes.
